@@ -1,8 +1,11 @@
 import 'package:ecommarce_single_vendor/controller/auth/signup-controller.dart';
+import 'package:ecommarce_single_vendor/core/class/staturequest.dart';
+import 'package:ecommarce_single_vendor/core/constant/imageasset.dart';
 import 'package:ecommarce_single_vendor/core/functions/valiedinput.dart';
 import 'package:ecommarce_single_vendor/view/widget/auth/customtextbodyauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../controller/auth/login_controller.dart';
 import '../../../core/constant/color.dart';
@@ -18,7 +21,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controller = Get.put(LoginControllerImp());
+     Get.put(LoginControllerImp());
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
       appBar: AppBar(
@@ -33,7 +36,12 @@ class Login extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
       ),
-      body: WillPopScope(onWillPop: alertExitApp, child: Container(
+      body: WillPopScope(onWillPop: alertExitApp, 
+      child: GetBuilder<LoginControllerImp>(builder: (controller)=> 
+      controller.statusRequest == StatusRequest.loading
+      ? Center(child: Lottie.asset(AppImageAsset.loading))
+      :
+      Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: Form
         (
@@ -79,6 +87,7 @@ class Login extends StatelessWidget {
             ],
           ),
         ),
-      )));
-  }
+      )))
+  );
+      }
 }

@@ -9,6 +9,7 @@ abstract class VerifyCodeController extends GetxController {
 
 class VerifyCodeControllerImp extends VerifyCodeController {
   late String verifyCode;
+
   @override
   checkEmail() {}
 
@@ -19,6 +20,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
 
   @override
   void onInit() {
+
     super.onInit();
   }
 

@@ -1,4 +1,6 @@
 import 'package:ecommarce_single_vendor/controller/auth/signup-controller.dart';
+import 'package:ecommarce_single_vendor/core/class/staturequest.dart';
+import 'package:ecommarce_single_vendor/core/functions/alertexitapp.dart';
 import 'package:ecommarce_single_vendor/view/widget/auth/customtextbodyauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +18,7 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SignUpControllerImp controller = Get.put(SignUpControllerImp());
+    Get.put(SignUpControllerImp());
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
       appBar: AppBar(
@@ -31,7 +33,12 @@ class SignUp extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
       ),
-      body: Container(
+      body: WillPopScope(
+        onWillPop: alertExitApp,
+        child: GetBuilder<SignUpControllerImp>(builder: (controller) =>
+        controller.statusRequest == StatusRequest.loading?
+        Text("loading00"):
+        Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: Form(
           key: controller.formstate,
@@ -112,6 +119,6 @@ class SignUp extends StatelessWidget {
           ),
         ),
       ),
-    );
+   )) );
   }
 }

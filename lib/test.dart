@@ -12,16 +12,28 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
+
+  @override
+  void initState() {
+     
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      child: ListView(
-        children: [
-          
-          //
-          
-        ],
+    return Scaffold
+    (
+      appBar: AppBar(
+        title: Text("test page"),
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: ListView(
+          children: [
+            
+            //
+            
+          ],
+        ),
       ),
     );
   }

@@ -44,6 +44,10 @@ class MyTranslation extends Translations {
           "areyouwanttoexit": "",
              "confirm": "",
              "cancel": "",
+             "emailOrPhoneIsAlreadyExists": "",
+             "verifycodenotcorrect": "",
+             "error": "",
+             "emailOrPasswordNotCorrect": "",
           
         },
         "en": {
@@ -86,6 +90,10 @@ class MyTranslation extends Translations {
           "areyouwanttoexit": "Are you want to exit from app?",
           "confirm": "Confirm",
           "cancel": "Cancel",
+          "warning": "Warning",
+          "verifycodenotcorrect": "This verification code is not correct",
+          "error": "ُError",
+          "emailOrPasswordNotCorrect": "Email or password NOT correct",
         },
       };
 }

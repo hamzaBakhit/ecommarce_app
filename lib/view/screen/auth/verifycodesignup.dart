@@ -1,3 +1,4 @@
+import 'package:ecommarce_single_vendor/core/class/staturequest.dart';
 import 'package:ecommarce_single_vendor/view/widget/auth/customtextbodyauth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
@@ -11,7 +12,7 @@ class VerifyCodeSignup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeSignupControllerImp controller = Get.put(VerifyCodeSignupControllerImp());
+    Get.put(VerifyCodeSignupControllerImp());
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
       appBar: AppBar(
@@ -26,7 +27,10 @@ class VerifyCodeSignup extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
       ),
-      body: Container(
+      body: GetBuilder<VerifyCodeSignupControllerImp>(builder: (controller)=>
+      controller.statusRequest == StatusRequest.loading
+      ? Text("loading...")
+      : Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: ListView(
           children: [
@@ -55,12 +59,12 @@ class VerifyCodeSignup extends StatelessWidget {
             },
             //runs when every textfield is filled
             onSubmit: (String verificationCode) {
-             controller.goToSuccessSignUp();
+             controller.goToSuccessSignUp(verificationCode);
             }, // end onSubmit
           ),
          ],
         ),
       ),
-    );
+    ));
   }
 }

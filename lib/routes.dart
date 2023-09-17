@@ -1,5 +1,6 @@
 import 'package:ecommarce_single_vendor/view/screen/OnBoarding.dart';
 import 'package:ecommarce_single_vendor/view/screen/auth/forgetPassword/forgetpassword.dart';
+import 'package:ecommarce_single_vendor/view/screen/auth/home.dart';
 import 'package:ecommarce_single_vendor/view/screen/auth/login.dart';
 import 'package:ecommarce_single_vendor/view/screen/auth/forgetPassword/resetpassword.dart';
 import 'package:ecommarce_single_vendor/view/screen/auth/forgetPassword/successResetPassword.dart';
@@ -30,19 +31,6 @@ List<GetPage<dynamic>> routes = [
   //onboarding pages
     GetPage(name: AppRoute.onboarding , page: ()=> const OnBoarding()),
     GetPage(name: AppRoute.language , page: ()=> const Language()),
+    //home 
+     GetPage(name: AppRoute.home , page: ()=> const HomePage()),
 ];
-
-Map<String, Widget Function(BuildContext)> routess= {
-  //auth
-  AppRoute.login : (_)=> const Login(),
-  AppRoute.signup : (_)=> const SignUp(),
-  AppRoute.forgetPassword : (_)=> const ForgetPassword(),
-  AppRoute.verifyCode : (_)=> const VerifyCode(),
-  AppRoute.resetPassword : (_)=> const ResetPassword(),
-  AppRoute.successResetPassword : (_)=> const SuccessResetPassword(),
-  AppRoute.successSignUp: (_)=> const SuccessSignUp(),
-  AppRoute.verifycodesignup: (_)=> const VerifyCodeSignup(),
-  //onboarding
-  AppRoute.onboarding : (_)=> const OnBoarding(),
-  AppRoute.language : (_)=> const Language(),
-};
