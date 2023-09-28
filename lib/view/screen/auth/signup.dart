@@ -1,9 +1,11 @@
 import 'package:ecommarce_single_vendor/controller/auth/signup-controller.dart';
 import 'package:ecommarce_single_vendor/core/class/staturequest.dart';
+import 'package:ecommarce_single_vendor/core/constant/imageasset.dart';
 import 'package:ecommarce_single_vendor/core/functions/alertexitapp.dart';
 import 'package:ecommarce_single_vendor/view/widget/auth/customtextbodyauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../core/constant/color.dart';
 import '../../../core/functions/valiedinput.dart';
@@ -37,7 +39,7 @@ class SignUp extends StatelessWidget {
         onWillPop: alertExitApp,
         child: GetBuilder<SignUpControllerImp>(builder: (controller) =>
         controller.statusRequest == StatusRequest.loading?
-        Text("loading00"):
+        Center(child: Lottie.asset(AppImageAsset.loading, width: 250, height: 250),):
         Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: Form(
@@ -82,6 +84,7 @@ class SignUp extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
+              //
                CustomTextFormAuth(
                 isNumber: true,
                 valied: (val){
@@ -95,6 +98,7 @@ class SignUp extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
+              //
                CustomTextFormAuth(
                 isNumber: false,
                 valied: (val){

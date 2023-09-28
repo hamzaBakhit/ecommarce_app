@@ -1,8 +1,10 @@
 import 'package:ecommarce_single_vendor/core/class/staturequest.dart';
+import 'package:ecommarce_single_vendor/core/constant/imageasset.dart';
 import 'package:ecommarce_single_vendor/view/widget/auth/customtextbodyauth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import '../../../../core/constant/color.dart';
 import '../../../controller/auth/verifycodesignup_controller.dart';
 import '../../widget/auth/customtexttitleauth.dart';
@@ -29,7 +31,7 @@ class VerifyCodeSignup extends StatelessWidget {
       ),
       body: GetBuilder<VerifyCodeSignupControllerImp>(builder: (controller)=>
       controller.statusRequest == StatusRequest.loading
-      ? Text("loading...")
+      ? Center(child: Lottie.asset(AppImageAsset.loading),)
       : Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: ListView(
@@ -59,7 +61,8 @@ class VerifyCodeSignup extends StatelessWidget {
             },
             //runs when every textfield is filled
             onSubmit: (String verificationCode) {
-             controller.goToSuccessSignUp(verificationCode);
+              print("onsubmitEmail${Get.arguments['email']}");
+             controller.goToSuccessSignUp(Get.arguments['email'],verificationCode);
             }, // end onSubmit
           ),
          ],
