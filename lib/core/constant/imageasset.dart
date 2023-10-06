@@ -13,6 +13,6 @@ class AppImageAsset{
   // lottie imaes
   static const String loading = "$rootLotties/loading$json";
   static const String nodata = "$rootLotties/nodata$json";
-  static const String offline = "$rootLotties/offline$json";
+  static const String offline = "$rootLotties/offine$json";
   static const String server = "$rootLotties/server$json";
 }

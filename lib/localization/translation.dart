@@ -48,7 +48,12 @@ class MyTranslation extends Translations {
              "verifycodenotcorrect": "",
              "error": "",
              "emailOrPasswordNotCorrect": "",
-          
+             "emailNotFound": "",
+             "verifyCodeNotCorrect": "",
+             "yourEmail": "",
+             "passwordIsNotEqualsRepassword": "",
+             "tryAgain": "",
+
         },
         "en": {
           "1": "Choose language",
@@ -94,6 +99,11 @@ class MyTranslation extends Translations {
           "verifycodenotcorrect": "This verification code is not correct",
           "error": "ُError",
           "emailOrPasswordNotCorrect": "Email or password NOT correct",
+          "emailNotFound": "Email NOT found",
+          "verifyCodeNotCorrect": "Verify code NOT correct",
+          "yourEmail": "Your email",
+          "passwordIsNotEqualsRepassword": "The password entered is NOT Equals Repassword",
+          "tryAgain":"Try again",
         },
       };
 }

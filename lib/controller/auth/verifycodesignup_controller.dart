@@ -14,7 +14,7 @@ class VerifyCodeSignupControllerImp extends VerifyCodeSignupController {
    
     VerifyCodeSignupData verifyCodeSignupData = VerifyCodeSignupData(Get.find());
     Crud crud = Crud();
-    StatusRequest? statusRequest;
+    StatusRequest statusRequest = StatusRequest.none;
   @override
   checkEmail() {}
 
@@ -44,6 +44,7 @@ class VerifyCodeSignupControllerImp extends VerifyCodeSignupController {
 
   @override
   void onInit() {
+
     super.onInit();
   }
 
